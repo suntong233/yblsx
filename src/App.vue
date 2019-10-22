@@ -25,4 +25,21 @@
     position: relative;
     width: 100%;
   }
+  .mdBox{
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgb(33, 30, 43);
+    color: rgb(197, 212, 226);
+  }
+  .mdBox ul li{
+    margin: 3px;
+    margin-left: 20px;
+    list-style: disc;
+  }
+  .mdBox pre{
+    margin: 5px;
+  }
+  .language-js{
+    color: rgb(198, 218, 151);
+  }
 </style>
