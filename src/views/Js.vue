@@ -1,6 +1,7 @@
 <template>
   <div>
       <HeaderNav></HeaderNav>
+      Js
   </div>
 </template>
 
@@ -10,7 +11,7 @@ const components = {
     HeaderNav
 }
 export default {
-    name: "Home",
+    name: "Js",
     components
 }
 </script>

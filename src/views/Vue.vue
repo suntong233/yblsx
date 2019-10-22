@@ -1,6 +1,7 @@
 <template>
   <div>
       <HeaderNav></HeaderNav>
+      Vue
   </div>
 </template>
 
@@ -10,7 +11,7 @@ const components = {
     HeaderNav
 }
 export default {
-    name: "Home",
+    name: "Vue",
     components
 }
 </script>
