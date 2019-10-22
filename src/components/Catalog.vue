@@ -1,6 +1,6 @@
 <template>
     <div class="Catalog-container">
-        <div  class="Catalog-box">
+        <div :class="{isshowbox: arrowd === 'bottom'}" class="Catalog-box">
             <div @click="handleChange(item.name)" class="Catalog-item" :class="{isshowitem: arrowd === 'bottom',showitem: nowItem == item.name}" v-for="item in cataloglist" :key="item.name">{{ item.name }}</div>
             <span @click="showhidenitem" class="hiden-Catalogitem">
                 <img v-if="arrowd == 'top'" style="width:20px;" src="/img/箭头向上.png">
@@ -52,6 +52,7 @@ export default {
     .Catalog-box{
         border: 1px solid rgb(187, 198, 228);
         display: flex;
+         transition: 200ms;
         flex-wrap: nowrap;
         flex-direction: column;
         background-color: rgb(250,250,250);
@@ -72,6 +73,7 @@ export default {
     .Catalog-item:nth-last-of-type(1){
         border:none;
     }
+    
     .isshowitem{
         padding: 0;
         height: 0;
@@ -101,5 +103,11 @@ export default {
            width: 100%;
             top: 42px;
        }
+       .isshowbox{
+            position: fixed;
+            top: 0;
+            opacity: 0.1;
+            transition: 200ms;
+        }
     }
 </style>

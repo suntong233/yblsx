@@ -30,6 +30,8 @@
     border-radius: 8px;
     background-color: rgb(33, 30, 43);
     color: rgb(197, 212, 226);
+    box-shadow: 0 0 4px #ccc;
+    overflow: auto;
   }
   .mdBox ul li{
     margin: 3px;

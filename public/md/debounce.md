@@ -16,3 +16,88 @@
         fn()
     }, 1000)
 ```
+
+## 闭包封装
+```js
+    // 需要保存this 和 参数arguments
+    function debounce (fn, wait) {
+        let timer
+        return function(){
+            let that = this
+            let arg = arguments
+            setTimeout(()=>{
+                fn.apply(that, args)
+            },wait)
+        }
+    }
+
+    // 使用它
+    function fn(){
+        ...
+    }
+    dom.addEventListener("scroll", debounce(fn, 200))
+```
+* 立即执行版本
+```js
+    function debounce (fn, wait) {
+        let timer 
+        return function () {
+            let that = this
+            let arg = arguments
+            // 刚开始timer是undefined时立刻触发 然后再定时器成功消除后再把timer设为timer
+            if(timer){
+                clearTimeout(timer)
+            } else {
+                fn.apply(that, arg)
+            }
+            timer = setTimeout(()=>{
+                timer = null
+            }, wait)
+        }
+    }
+```
+
+* 最终封装
+```js
+    // 可以通过第三个参数type(布尔类型) 来选择是立刻执行还是延迟执行
+    function debounce (fn, wait , type) {
+        let timer 
+        return function () {
+            let that = this
+            let arg = arguments
+            if(timer){
+                clearTimeout(timer)
+            }
+            if(!type){
+                timer = setTimeout(()=>{
+                    fn.apply(that, arg)
+                }, wait)
+            }else {
+                if(!timer){
+                    fn.apply(that, arg)
+                }
+                timer = setTimeout(()=>{
+                    timer = null
+                }, wait)
+            }
+            
+        }
+    }
+```
+
+## 在vue中使用防抖
+* 导出方法
+```js
+    export function _dobounce(fn, wait, type){
+        // ...
+    }
+
+    // 使用到的地方导入
+    import { _dobounce } from "@/utils/public"
+
+    methods: {
+        fun:  _dobounce(function(){
+            
+        },200,true)
+    }
+```
