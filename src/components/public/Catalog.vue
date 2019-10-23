@@ -1,7 +1,7 @@
 <template>
     <div class="Catalog-container">
         <div :class="{isshowbox: arrowd === 'bottom'}" class="Catalog-box">
-            <div @click="handleChange(item.name)" class="Catalog-item" :class="{isshowitem: arrowd === 'bottom',showitem: nowItem == item.name}" v-for="item in cataloglist" :key="item.name">{{ item.name }}</div>
+            <div @click="handleChange(item.name)" class="Catalog-item" :class="{isshowitem: arrowd === 'bottom',showitem: showitem == item.name}" v-for="item in cataloglist" :key="item.name">{{ item.name }}</div>
             <span @click="showhidenitem" class="hiden-Catalogitem">
                 <img v-if="arrowd == 'top'" style="width:20px;" src="/img/箭头向上.png">
                 <img v-else style="width:20px;" src="/img/箭头向下.png">
@@ -19,12 +19,14 @@ export default {
             default(){
                 return [1,2,3,4,5]
             }
+        },
+        showitem: {
+            type: String
         }
     },
     data () {
         return {
             arrowd: "top",
-            nowItem: this.cataloglist[0].name
         }
     },
     methods: {
@@ -36,7 +38,6 @@ export default {
             }
         },
         handleChange(name){
-            this.nowItem = name
             this.$emit("handleChange", name)
         }
     },
@@ -82,7 +83,8 @@ export default {
         transition: 500ms linear;
     }
     .showitem{
-        color: blueviolet;
+        color: rgb(255, 255, 255);
+        background-color: rgb(138, 139, 23);
     }
     @media only screen and (min-width: 480px) {
         .Catalog-box{

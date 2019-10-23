@@ -1,7 +1,11 @@
 <template>
     <div class="throttle-container">
         <div class="mdBox" v-html="mdHtml"></div>
-        <h4 style="margin-top:15px;color: #555;">以下示例使用了鼠标移动事件mousemove，让里面数字++</h4>
+        <h4 style="margin-top:15px;color: #555;">以下示例使用了鼠标移动事件mousemove，让里面数字++ ,不用节流</h4>
+        <div @mousemove="foo2(count1)" class="shili">
+            {{ count1 }}
+        </div>
+        <h4 style="margin-top:15px;color: #555;">以下示例使用了鼠标移动事件mousemove，让里面数字++，节流</h4>
         <div @mousemove="foo(count)" class="shili">
             {{ count }}
         </div>
@@ -9,28 +13,29 @@
 </template>
 
 <script>
-import showdown from 'showdown';
-import { _throttle } from '../utils/public.js';
+import { _throttle } from '../../utils/public.js';
 export default {
     name: "throttle",
     data () {
         return {
             mdHtml: "",
             count: 0,
+            count1: 0,
             type: true
         }
     },
     methods: {
+        foo2(){
+            this.count1++
+        },
         foo: _throttle(function (n) {
             n++
             this.count = n
-            console.log(n)
-        }, 1000)
+        }, 300)
     },
     created () {
-        let converter = new showdown.Converter();
         this.axios.get('/md/throttle.md').then(res=>{
-            this.mdHtml = converter.makeHtml(res.data)
+            this.mdHtml = this.converter.makeHtml(res.data)
         })
     }
 }

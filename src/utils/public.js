@@ -34,4 +34,12 @@ const _throttle = function(fn, wait){
         }
     }
 }
-export {_debounce, _throttle}
+
+const _saveLocal = function(name, data){
+    if(localStorage[name]){
+        localStorage[name] = JSON.stringify(data)
+    }else{
+        localStorage.setItem(name, JSON.stringify(data))
+    }
+}
+export {_debounce, _throttle, _saveLocal}

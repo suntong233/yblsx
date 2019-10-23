@@ -1,7 +1,7 @@
 <template>
   <div class="Others-container">
       <HeaderNav></HeaderNav>
-      <Catalog @handleChange="handleChange" :cataloglist="componentsData"></Catalog>
+      <Catalog :showitem="showComponent" @handleChange="handleChange" :cataloglist="componentsData"></Catalog>
       <div class="main-container">
           <component :is="showComponent"></component>
       </div>
@@ -9,10 +9,11 @@
 </template>
 
 <script>
-import HeaderNav from "../components/HeaderNav"; // 引入顶部组件
-import Catalog from "../components/Catalog"; // 引入顶部组件
-import Debounce from "../components/debounce"; // 引入防抖组件
-import Throttle from "../components/throttle"; // 引入节流组件
+import HeaderNav from "../components/public/HeaderNav"; // 引入顶部组件
+import Catalog from "../components/public/Catalog"; // 引入目录组件
+import Debounce from "../components/others/debounce"; // 引入防抖组件
+import Throttle from "../components/others/throttle"; // 引入节流组件
+import { _saveLocal } from "../utils/public.js"; // 引入本地存储工具
 const components = {
     HeaderNav,
     Catalog,
@@ -34,9 +35,15 @@ export default {
             ]
         }
     },
+    created () {
+        if(localStorage['othersshowComponent']){
+            this.showComponent = JSON.parse(localStorage['othersshowComponent'])
+        }
+    },
     methods: {
         handleChange(e){
             this.showComponent = e
+            _saveLocal('othersshowComponent',this.showComponent)
         }
     },
     components

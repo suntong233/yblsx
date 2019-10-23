@@ -88,10 +88,10 @@
 ## 在vue中使用防抖
 * 导出方法
 ```js
-    export function _dobounce(fn, wait, type){
+    const _debounce = function(fn, wait , type) {
         // ...
     }
-
+    export { _debounce }
     // 使用到的地方导入
     import { _dobounce } from "@/utils/public"
 
