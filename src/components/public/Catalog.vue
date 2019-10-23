@@ -61,6 +61,7 @@ export default {
         align-items: center;
         justify-content: center;
         overflow: hidden;
+        z-index: 100;
     }
     .Catalog-item{
         width: 90%;

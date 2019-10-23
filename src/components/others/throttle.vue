@@ -1,6 +1,9 @@
 <template>
     <div class="throttle-container">
-        <div class="mdBox" v-html="mdHtml"></div>
+        <div v-if="showmdbox" class="loadingmdBox">
+            <img src="http://hbimg.b0.upaiyun.com/611bb3198c03cfefea188d170f33f27f1611c8e8a3ea-o8nm2q_fw658">
+        </div>
+        <div v-else class="mdBox" v-html="mdHtml"></div>
         <h4 style="margin-top:15px;color: #555;">以下示例使用了鼠标移动事件mousemove，让里面数字++ ,不用节流</h4>
         <div @mousemove="foo2(count1)" class="shili">
             {{ count1 }}
@@ -21,6 +24,7 @@ export default {
             mdHtml: "",
             count: 0,
             count1: 0,
+            showmdbox: true,
             type: true
         }
     },
@@ -36,6 +40,7 @@ export default {
     created () {
         this.axios.get('/md/throttle.md').then(res=>{
             this.mdHtml = this.converter.makeHtml(res.data)
+            this.showmdbox = false
         })
     }
 }
@@ -52,5 +57,11 @@ export default {
         text-align: center;
         line-height: 200px;
         font-size: 24px;
+    }
+    .loadingmdBox{
+        width:100%;
+    }
+    .loadingmdBox>img{
+        width: 100%;
     }
 </style>
