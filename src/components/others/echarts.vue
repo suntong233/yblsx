@@ -125,11 +125,6 @@ export default {
             }]
       });
       myChart3.setOption({
-    // title: {
-    //     text: '天气情况统计',
-    //     subtext: '虚构数据',
-    //     left: 'center'
-    // },
     tooltip : {
         trigger: 'item',
         formatter: "{a} <br/>{b} : {c} ({d}%)"
