@@ -58,6 +58,7 @@ export default {
         overflow: hidden;
         transition: 500ms linear;
         overflow: auto;
+        z-index: 100;
     }
     .HeaderNav-container::-webkit-scrollbar{
         display: none;
