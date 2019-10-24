@@ -344,6 +344,7 @@ export default {
         } //数据格式化
       },
       visualMap: {
+        type: 'piecewise',
         min: 0,
         max: 1500,
         left: "left",
