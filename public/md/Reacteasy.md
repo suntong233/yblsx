@@ -129,8 +129,90 @@
 ```
 
 ## 条件渲染 列表渲染
-
+* 与运算符&&
 ```js
-    
+    {
+        flag && <div>...</div>
+    }
 ```
 
+* 三元
+```js
+    {
+        flag? 
+        <div>1</div> : <div>2</div>
+    }
+```
+
+* 较复杂的用函数
+
+```js
+    function foo(){
+        if(flag){
+            return ...
+        }else {
+            return ...
+        }
+    }
+```
+
+* 列表渲染用map
+
+```js
+    {
+        list.map(item=>{
+            return (<div>...{item..}</div>)
+        })
+    }
+```
+
+## 表单绑定
+
+```js
+    state = {
+        value: ''
+    }
+
+    handleChange(e){
+        this.setState({
+            value: e.target.value
+        })
+    }
+
+    <input value={ value } onChange={ handleChange } />
+```
+
+## 状态提升
+
+```js
+    class Father extends React.Component{
+        constructor(props){
+            super(props);
+            this.state = {
+                value: ''
+            }
+        }
+        handleChange=(val)=>{
+            this.setState({
+                value: val
+            })
+        }
+
+        render(){
+            return (
+                <div>
+                    <Children value={this.state.value} onHandleChange={this.handleChange}/>>
+                </div>
+            )
+        }
+    }
+
+    class Children extends React.Component{
+        handleChange=(e)=>{
+            this.props.onHandleChange(e.target.value)
+        }
+        render(){
+            return <input value={this.props.value} onChange={this.handleChange} />
+        }
+    }
+```
