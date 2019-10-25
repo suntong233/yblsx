@@ -13,12 +13,14 @@ import HeaderNav from "../components/public/HeaderNav"; // 引入顶部组件
 import Catalog from "../components/public/Catalog"; // 引入目录组件
 import VarandType from "../components/js/Variablesandtypes"; // 引入变量和类型
 import JsSundry from "../components/js/JsSundry"; // 引入js杂项
+import EsSix from "../components/es6/es6index"; // 引入es6
 import { _saveLocal } from "../utils/public.js"; // 引入本地存储工具
 const components = {
     HeaderNav,
     Catalog,
     VarandType,
-    JsSundry
+    JsSundry,
+    EsSix
 }
 export default {
     name: "Js",
@@ -31,6 +33,9 @@ export default {
                 },
                 {   // 杂项
                     name: "JsSundry"
+                },
+                {   // es6
+                    name: "EsSix"
                 }
             ],
         }

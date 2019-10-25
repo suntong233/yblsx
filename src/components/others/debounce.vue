@@ -25,7 +25,7 @@ export default {
             count: 0,
             count1: 0,
             type: true,
-            showmdbox: true
+            showmdbox: true 
         }
     },
     methods: {
