@@ -13,10 +13,12 @@ import HeaderNav from "../components/public/HeaderNav"; // 引入顶部组件
 import Catalog from "../components/public/Catalog"; // 引入目录组件
 import { _saveLocal } from "../utils/public.js"; // 引入本地存储工具
 import ReactEasy from "../components/react/ReactEasy"; // 引入React快速入门
+import Cra from "../components/react/Cra"; // 引入React快速入门
 const components = {
     HeaderNav,
     Catalog,
-    ReactEasy
+    ReactEasy,
+    Cra
 }
 export default {
     name: "React",
@@ -26,6 +28,9 @@ export default {
             componentsData: [
                 {
                     name: "ReactEasy"
+                },
+                {
+                    name: "Cra"
                 }
             ]    
         }

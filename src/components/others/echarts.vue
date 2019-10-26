@@ -9,6 +9,7 @@
         <div ref="ecahrtbox3" class="ecahrtbox1"></div>
         <div ref="ecahrtbox4" class="ecahrtbox1"></div>
         <div ref="ecahrtbox5" class="ecahrtbox1"></div>
+        <div ref="ecahrtbox6" class="ecahrtbox1"></div>
       </el-tab-pane>
     </el-tabs>
   </div>
@@ -28,6 +29,7 @@ export default {
     const myChart3 = window.echarts.init(this.$refs.ecahrtbox3);
     const myChart4 = window.echarts.init(this.$refs.ecahrtbox4);
     const myChart5 = window.echarts.init(this.$refs.ecahrtbox5);
+    const myChart6 = window.echarts.init(this.$refs.ecahrtbox6);
     myChart.setOption({
       title: {
         text: "ECharts 入门示例"
@@ -425,6 +427,64 @@ export default {
         }
       ]
     });
+
+    myChart6.setOption({
+          backgroundColor: '#fff',
+        title: {
+          text: '营业区间：660亿～1760亿',
+          textStyle: {color: '#000',fontWeight: 500, fontSize: 12}
+        },
+        color: ['#3398DB'],
+        tooltip : {
+            trigger: 'axis',
+            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis : [
+            {
+                type : 'category',
+                data : ['2015', '2016', '2017', '2018'],
+                axisLine: {
+                  lineStyle: { //坐标轴轴线相关设置。
+                    color: '#eee', //坐标轴线线的颜色。
+                    type: 'double'
+                  }
+                },
+                axisTick: { //坐标轴刻度相关设置。double
+                  show: false
+                },
+                axisLabel: { //坐标轴刻度标签的相关设置。
+                  color: '#888'
+                }
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value',
+                show: false,
+                splitLine:false,
+                min: 0,
+                max: 50,
+                splitNumber: 1
+            }
+        ],
+        series : [
+            {
+                name:'直接访问',
+                type:'bar',
+                barWidth: 30,
+                data:[10, 10, 20, 30],
+                color: 'rgb(18,139,237)'
+            }
+        ]
+      })
   },
   methods: {
     randomValue() {
