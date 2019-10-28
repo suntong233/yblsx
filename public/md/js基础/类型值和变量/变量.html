@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let i = 1;
+        // if(i){
+        //     let a = 1;
+        // }    
+        // (function(){
+        //     var b = 1;
+        // })()
+        // console.log(a);
+        // console.log(b);
+        // foo();
+
+        // function foo(){
+        //     console.log('s');
+        // }
+        // foo2(2);
+        // function foo2(x){
+        //     var y = 1;
+        //     console.log(x);
+        //     console.log(y);
+        // }
+
+        // function foo(a) { 
+        //     console.log(b);
+        //     console.log( a + b );
+        //     var b = a; //b=a   则报错
+        // } 
+ 
+        // foo( 2 );
+        // console.log(c); //打印function c(){}
+        // var c;
+        // function c(){
+        // }
+
+        
+        // foo1=()=>{ 
+        //     foo2=()=>{        
+        //         foo3=()=>{
+        //             console.log(x);
+        //         }
+        //         foo3();
+        //     }
+        //     foo2();
+        // }
+        // foo1();
+        // var x = 1;
+        // function foo1(){
+        //     console.log(x);
+        // }
+        // function foo2(){
+        //     var x = 2;
+        //     foo1();    //返回的是1 而不是2
+        // }
+        // foo2();
+        var x = 1 ;
+        function foo1(){
+            var x = 2;
+            function foo2(){
+                return x;
+            }
+            return foo2;
+        }
+        console.log(foo1()());  //输出2
+    </script>
+</body>
+</html>

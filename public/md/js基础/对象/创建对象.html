@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let obj1 = { a:1 , b:2};
+        // // console.log(obj1.prototype);
+        // let obj2 = Object.create(obj1);
+        // obj2.d=4;
+        // obj3 = {...obj2,
+        //     c:3
+        // }
+        // console.log(obj3);
+        // console.log(obj3.a);
+        let obj1 = {
+            a: 2,
+            b: { c: 1, d: 2 },
+            e: 5
+        }
+        function getObj(obj) {
+            if (typeof (obj) == 'object') {
+                for (let item in obj) {
+                   
+                    if (typeof (obj[item]) == 'object') {
+                        getObj(obj[item]);
+                    }else{
+                        console.log(obj[item]);
+                    }
+                }
+
+            }
+        }
+        // getObj(obj1);
+        let obj = {}; //obj从Object.prototype继承对象的方法
+        obj.x = 1;   //给obj定义一个属性x
+        let p = Object.create(obj);  //p继承自obj和Object.prototype
+        p.y = 2;
+        let q = Object.create(p);    //q继承自q和前面的
+        q.z = 3;
+        console.log(q.z+p.y+obj.x);  //6
+        console.log(obj);
+        q.x = 100;
+        console.log(q.x);
+        console.log(obj);
+      
+    </script>
+</body>
+
+</html>

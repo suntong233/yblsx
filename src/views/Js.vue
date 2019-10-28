@@ -14,13 +14,15 @@ import Catalog from "../components/public/Catalog"; // 引入目录组件
 import JsBase from "../components/js/jsBase"; // 引入变量和类型
 import JsSundry from "../components/js/JsSundry"; // 引入js杂项
 import EsSix from "../components/es6/es6index"; // 引入es6
+import FacetoO from "../components/js/FaceToO"; // 引入es6
 import { _saveLocal } from "../utils/public.js"; // 引入本地存储工具
 const components = {
     HeaderNav,
     Catalog,
     JsBase,
     JsSundry,
-    EsSix
+    EsSix,
+    FacetoO
 }
 export default {
     name: "Js",
@@ -36,6 +38,9 @@ export default {
                 },
                 {   // es6
                     name: "EsSix"
+                },
+                {   // 面向对象
+                    name: "FacetoO"
                 }
             ],
         }

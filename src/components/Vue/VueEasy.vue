@@ -190,7 +190,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .loadingmdBox {
   width: 100%;
 }
