@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">{{ msg }} {{ obj.text }}</div>
+</body>
+<script>
+    const obj = { text: 'asd', name: 'obj' }
+    Object.freeze(obj)
+    let app = new Vue({
+        el: '#app',
+        data: {
+            msg: 'hello',
+            obj: obj
+        }
+    })
+    app.msg = 123
+    console.log(app.obj)
+    
+    app.obj.text = 1
+
+    console.log(app.$data)
+</script>
+</html>

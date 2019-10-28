@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="msg">
+        {{ msg }}
+        <div>
+            jack:<input value="jack" v-model="res" type="checkbox">
+        </div>
+        <div>
+            lucy:<input value="lucy" v-model="res" type="checkbox">
+        </div>
+        <div>
+            picc<input value="picc" v-model="res" type="checkbox">
+        </div>
+        <div>
+            {{ res }}
+        </div>
+        <div>
+            男<input v-model="res2" type="radio" value="man">
+            女<input v-model="res2" type="radio" value="falman">
+        </div>
+        <div>{{ res2 }}</div>
+        <hr>
+        <select v-model="selected" multiple>
+            <option value="">请选择</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <div>{{selected}}</div>
+        <div><select v-model="selected2">
+            <option v-for="item in list" :value="item.value">{{item.value}}</option>
+        </select></div>
+        {{selected2}}
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            msg: '',
+            res: [],
+            res2: '',
+            selected: [],
+            list: [
+                {id:1, value:'asjkd'},
+                {id:2, value:'dfhh'},
+                {id:3, value:'qt'},
+                {id:4, value:'tyj'},
+                {id:5, value:'tw'}
+            ],
+            selected2: 'asjkd'
+        },
+        methods: {
+
+        }
+    })
+</script>
+
+</html>

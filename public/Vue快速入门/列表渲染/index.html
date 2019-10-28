@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div v-for="item,index in arr">
+            {{ index }}
+            {{ item.msg }}
+        </div>
+        <div v-for="value,key,index in obj">
+            {{ index }}：{{ key }}：{{ value }}
+        </div>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            arr: [{
+                    msg: 'sgs'
+                },
+                {
+                    msg: 'ytj'
+                },
+                {
+                    msg: 'gh'
+                },
+                {
+                    msg: '3wk'
+                }
+            ],
+            obj: {
+                name: '小王',
+                age: 15,
+                address: '火星'
+            }
+        },
+        mounted() {
+            // this.arr[0] = {
+            //         msg: 'new'
+            //     }
+            // this.arr.length=0
+            Vue.set(this.arr, 0, {
+                msg: 'newval'
+            })
+            this.arr.splice(0, 2)
+
+            Vue.set(this.obj, 'newAdd', '新增')
+
+            this.obj = Object.assign({
+                nnn: 5525
+            },this.obj, {
+                hahah: 4224,
+                adskdh: 24242
+            })
+        }
+    })
+</script>
+
+</html>

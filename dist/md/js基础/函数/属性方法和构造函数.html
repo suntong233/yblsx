@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function f(x,y,z){
+            check(arguments);
+            console.log(f.length);
+            return x + y + z;
+        }
+        function check(args){
+            console.log(check.length);
+            var actual = args.length;
+            var expected = args.callee.length;
+            if(actual !== expected){
+                throw Error("Expected"+expected+"args:got"+actual);
+            }
+        }
+        f(1,2,3);
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .test{
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+            text-align: center;
+            line-height: 200px;
+        }
+        .actived{
+            background-color: rgb(88, 86, 219);
+            color: aliceblue;
+        }
+        .test2{
+            font-size: 30px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div :class="obj" class="test">kllkjlk</div>
+        <div :class="objComputed"></div>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            count: 50,
+            obj: {
+                actived: 1,
+                test2: 1
+            }
+        },
+        computed: {
+            objComputed(){
+                return {
+                    actived: this.count>30 && this.count !==0
+                }
+            }
+        }
+    })
+
+</script>
+</html>

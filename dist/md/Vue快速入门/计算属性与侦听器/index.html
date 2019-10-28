@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">{{mycomputed}}<br>{{result}}<br>
+        <input type="text" v-model="result2">
+        <div>{{result3}}</div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                result: '',
+                msg2: 'jlasfjlk',
+                msg: 'asdjahsajdlasdasgfajsdfshasldjlkas',
+                result2: ''
+            },
+            created() {
+                setTimeout(() => {
+                    this.msg2 = '11'
+                    this.result2 = 'change'
+                }, 2000)
+            },
+            computed: {
+                mycomputed() {
+                    let arr = [...this.msg]
+                    let set = new Set(arr)
+                    return [...set].join('')
+                },
+                result3: {
+                    get: function(){
+                        return '获取的值' + this.result2
+                    },
+                    set: function(nval){
+                        console.log('值改变了：'+ nval)
+                    }
+                }
+            },
+            watch: {
+                msg2: function (val) {
+                    this.result = val + 'test'
+                }
+                
+            }
+        })
+    </script>
+</body>
+
+</html>
