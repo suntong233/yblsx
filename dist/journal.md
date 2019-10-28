@@ -16,13 +16,11 @@
 
 * 复制github上项目的ssh密钥 然后使用git remote add origin ...
 ```
-    git remote add origin git@github.com:suntong233/yblsx.git
+    git remote add origin git@github.com:suntong233/ybl_sx.git
     这样本地项目就与github仓库关联起来了
     git add . 
     git commit -m ""
     git push origin master
-    取消本地目录下关联的远程库
-    git remote remove origin
 ```
 ## css上的一些默认配置
 ```css
