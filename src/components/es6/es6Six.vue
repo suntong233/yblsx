@@ -19,7 +19,7 @@ export default {
     }
   },
   created () {
-        this.axios.get('/md/es6/字符串拓展.md').then(res=>{
+        this.axios.get('https://suntong233.github.io/yblsx/dist/md/es6/字符串拓展.md').then(res=>{
             this.mdHtml = this.converter.makeHtml(res.data)
             this.showmdbox = false
         })

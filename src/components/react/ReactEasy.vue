@@ -17,7 +17,7 @@ export default {
         }
     },
     created () {
-        this.axios.get('/md/Reacteasy.md').then(res=>{
+        this.axios.get('https://suntong233.github.io/yblsx/dist/md/Reacteasy.md').then(res=>{
             this.mdHtml = this.converter.makeHtml(res.data)
             this.showmdbox = false
         })

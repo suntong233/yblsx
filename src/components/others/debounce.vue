@@ -38,7 +38,7 @@ export default {
         }, 200, true)
     },
     created () {
-        this.axios.get('/md/debounce.md').then(res=>{
+        this.axios.get('https://suntong233.github.io/yblsx/dist/md/debounce.md').then(res=>{
             this.mdHtml = this.converter.makeHtml(res.data)
             this.showmdbox = false
         })

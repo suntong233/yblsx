@@ -38,7 +38,7 @@ export default {
         }, 300)
     },
     created () {
-        this.axios.get('/md/throttle.md').then(res=>{
+        this.axios.get('https://suntong233.github.io/yblsx/dist/md/throttle.md').then(res=>{
             this.mdHtml = this.converter.makeHtml(res.data)
             this.showmdbox = false
         })

@@ -19,7 +19,7 @@ export default {
     }
   },
   created () {
-        this.axios.get('/md/es6/let和const.md').then(res=>{
+        this.axios.get('https://suntong233.github.io/yblsx/dist/md/es6/let和const.md').then(res=>{
             this.mdHtml = this.converter.makeHtml(res.data)
             this.showmdbox = false
         })
