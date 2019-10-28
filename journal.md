@@ -165,3 +165,12 @@
 ```
     clip < ~/.ssh/id_rsa.pub
 ```
+
+## 分支合并
+
+```js
+  // 进入分支
+    st
+  // 合并
+  git merge master
+```
