@@ -3,8 +3,8 @@
         <div :class="{isshowbox: arrowd === 'bottom'}" class="Catalog-box">
             <div @click="handleChange(item.name)" class="Catalog-item" :class="{isshowitem: arrowd === 'bottom',showitem: showitem == item.name}" v-for="item in cataloglist" :key="item.name">{{ item.name }}</div>
             <span @click="showhidenitem" class="hiden-Catalogitem">
-                <img v-if="arrowd == 'top'" style="width:20px;" src="/img/箭头向上.png">
-                <img v-else style="width:20px;" src="/img/箭头向下.png">
+                <img v-if="arrowd == 'top'" style="width:20px;" src="img/箭头向上.png">
+                <img v-else style="width:20px;" src="img/箭头向下.png">
             </span>
         </div>
     </div>

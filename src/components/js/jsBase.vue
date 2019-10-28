@@ -74,7 +74,7 @@ export default {
     };
   },
   created() {
-    this.axios.get("/md/js基础/js大纲.md").then(res => {
+    this.axios.get("https://suntong233.github.io/yblsx/dist/md/js基础/js大纲.md").then(res => {
       this.mdHtml = this.converter.makeHtml(res.data);
       this.showmdbox = false;
     });
