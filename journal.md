@@ -173,4 +173,5 @@
   git checkout gh-pages
   // 合并
   git merge master
+  git merge gh-pages
 ```
