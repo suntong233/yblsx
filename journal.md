@@ -170,7 +170,7 @@
 
 ```js
   // 进入分支
-    st
+  git checkout gh-pages
   // 合并
   git merge master
 ```
