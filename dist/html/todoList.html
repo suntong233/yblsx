@@ -226,7 +226,7 @@
                         completeList.map((item,index)=>{
                             return (
                                 <div className="listItem" key={`${item}&${index}`} >
-                                    <div>{item}</div>
+                                    <div style={{textDecoration: 'line-through'}}>{item}</div>
                                     <div className="deletebtn" onClick={()=>handleDeleList(index, 2)}>删除</div>  
                                 </div>
                             )
