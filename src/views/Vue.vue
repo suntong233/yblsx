@@ -13,11 +13,13 @@ import HeaderNav from "../components/public/HeaderNav"; // 引入顶部组件
 import Catalog from "../components/public/Catalog"; // 引入目录组件
 import { _saveLocal } from "../utils/public.js"; // 引入本地存储工具
 import Vueeasy from "../components/Vue/VueEasy";  // 引入vue
+import SelfJournal from "../components/Vue/SelfJournal"; // 引入本地日志
 
 const components = {
     HeaderNav,
     Catalog,
-    Vueeasy
+    Vueeasy,
+    SelfJournal
 }
 export default {
     name: "Vue",
@@ -27,6 +29,9 @@ export default {
             componentsData: [
                 {
                     name: "Vueeasy"
+                },
+                {
+                    name: "SelfJournal"
                 }
             ]    
         }
