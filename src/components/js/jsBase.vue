@@ -1,12 +1,12 @@
 <template>
     <div>
-        变量和类型
+        
     </div>
 </template>
 
 <script>
 export default {
-
+    name: 'jsbase'
 }
 </script>
 
