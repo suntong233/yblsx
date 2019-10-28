@@ -1,10 +1,10 @@
 # ybl_sx
 
 # react todolist demo
-* https://suntong233.github.io/ybl_sx/dist/html/todoList.html
+* https://suntong233.github.io/yblsx/dist/html/todoList.html
 
 # orderlist
-* https://suntong233.github.io/ybl_sx/dist/html/orderlist/index.html
+* https://suntong233.github.io/yblsx/dist/html/orderlist/index.html
 
 ## Project setup
 ```
