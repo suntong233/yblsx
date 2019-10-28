@@ -25,7 +25,7 @@ export default {
     name: "Vue",
     data () {
         return {
-            showComponent: "",
+            showComponent: "Vueeasy",
             componentsData: [
                 {
                     name: "Vueeasy"

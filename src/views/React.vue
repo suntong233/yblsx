@@ -24,7 +24,7 @@ export default {
     name: "React",
     data () {
         return {
-            showComponent: "",
+            showComponent: "ReactEasy",
             componentsData: [
                 {
                     name: "ReactEasy"

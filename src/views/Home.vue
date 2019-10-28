@@ -1,7 +1,7 @@
 <template>
   <div>
       <HeaderNav></HeaderNav>
-      <a href="./html/orderlist/index.html" target="_blank">orderlist</a>
+      Home
   </div>
 </template>
 
