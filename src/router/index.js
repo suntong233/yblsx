@@ -37,6 +37,11 @@ const routes = [
     path: '/Others',
     name: 'Others',
     component: () => import("@/views/Others.vue")
+  },
+  {
+    path: '/Nodejs',
+    name: 'Nodejs',
+    component: () => import("@/views/Nodejs.vue")
   }
 ]
 
