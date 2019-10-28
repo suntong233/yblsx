@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <form @submit.prevent="handleadd">
+            <input v-model="newlis" type="text">
+        </form>
+        <li v-for="item,index in todoList" :key="item.id">
+            {{ item.title }}
+            <button @click="todoList.splice(index,1)">x</button>
+        </li>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            newlis: '',
+            todoList: [{
+                    id: 1,
+                    title: 'asjk'
+                },
+                {
+                    id: 2,
+                    title: 'sgj'
+                },
+                {
+                    id: 3,
+                    title: 'fa'
+                },
+                {
+                    id: 4,
+                    title: 'ty'
+                },
+                {
+                    id: 5,
+                    title: 'rtu'
+                }
+            ],
+            nextId: 6
+        },
+        created() {},
+        methods: {
+            handleadd() {
+                this.todoList.push({
+                    id: this.nextId++,
+                    title: this.newlis
+                })
+                this.newlis = ''
+            }
+        }
+    })
+</script>
+
+</html>
