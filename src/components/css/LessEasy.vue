@@ -18,6 +18,7 @@ export default {
       showmdbox: true
     };
   },
+
   created() {
     this.axios.get('https://suntong233.github.io/yblsx/dist/md/css/lessEasy.md').then(res=>{
         this.mdHtml = this.converter.makeHtml(res.data)
