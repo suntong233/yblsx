@@ -14,13 +14,15 @@ import Catalog from "../components/public/Catalog"; // 引入目录组件
 import Debounce from "../components/others/debounce"; // 引入防抖组件
 import Throttle from "../components/others/throttle"; // 引入节流组件
 import Echarts from "../components/others/echarts"; // 引入echarts组件
+import copydeep from "../components/others/copydeep"; // 引入echarts组件
 import { _saveLocal } from "../utils/public.js"; // 引入本地存储工具
 const components = {
     HeaderNav,
     Catalog,
     Debounce,
     Throttle,
-    Echarts
+    Echarts,
+    copydeep
 }
 export default {
     name: "Others",
@@ -36,6 +38,9 @@ export default {
                 },
                 {
                     name: "Echarts"
+                },
+                {
+                    name: "copydeep"
                 }
             ]
         }
