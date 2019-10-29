@@ -14,7 +14,9 @@ import Catalog from "../components/public/Catalog"; // 引入目录组件
 import JsBase from "../components/js/jsBase"; // 引入变量和类型
 import JsSundry from "../components/js/JsSundry"; // 引入js杂项
 import EsSix from "../components/es6/es6index"; // 引入es6
-import FacetoO from "../components/js/FaceToO"; // 引入es6
+import EsAsync from "../components/es6/es6Async"; // 引入es6
+import ArrayActions from "../components/js/ArrayActions"; // 引入es6
+import FacetoO from "../components/js/FaceToO"; // 引入面向对象
 import { _saveLocal } from "../utils/public.js"; // 引入本地存储工具
 const components = {
     HeaderNav,
@@ -22,7 +24,9 @@ const components = {
     JsBase,
     JsSundry,
     EsSix,
-    FacetoO
+    FacetoO,
+    EsAsync,
+    ArrayActions
 }
 export default {
     name: "Js",
@@ -41,6 +45,12 @@ export default {
                 },
                 {   // 面向对象
                     name: "FacetoO"
+                },
+                {   // async
+                    name: "EsAsync"
+                },
+                 {   // ArrayActions
+                    name: "ArrayActions"
                 }
             ],
         }

@@ -175,3 +175,12 @@
   git merge master
   git merge gh-pages
 ```
+
+## 打包后本地部署
+
+* 创建vue.config.js
+```js
+  module.exports = {
+    publicPath: './'
+  }
+```
