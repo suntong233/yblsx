@@ -17,8 +17,7 @@ export default {
         }
     },
     created () {
-        //https://suntong233.github.io/yblsx/dist/md/···'
-        this.axios.get('https://suntong233.github.io/yblsx/dist/md/面向对象.md').then(res=>{
+        this.axios.get('https://suntong233.github.io/yblsx/dist/md/BOM.md').then(res=>{
             this.mdHtml = this.converter.makeHtml(res.data)
             this.showmdbox = false
         })
