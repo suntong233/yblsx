@@ -52,6 +52,10 @@ export default {
         {
           title: "Nodejs",
           path: "/Nodejs"
+        },
+        {
+          title: "技术拾遗",
+          path: "/TechnologyReview"
         }
       ]
     };
@@ -84,23 +88,26 @@ export default {
 <style scoped>
 .HeaderNav-container {
   position: fixed;
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   height: 42px;
   width: 100%;
-  display: flex;
+  flex-wrap: nowrap;
   align-items: center;
-  overflow: hidden;
   transition: 500ms linear;
   overflow: auto;
+  display: flex;
+  align-items: center;
   z-index: 100;
 }
 .HeaderNav-container::-webkit-scrollbar {
   display: none;
 }
 .HeaderNav-container-box {
+  display: flex;
+  align-items: center;
   width: auto;
-  padding: 0 10px;
   margin: 0 auto;
+  padding: 0 10px;
 }
 @media only screen and (max-width: 380px) {
   .HeaderNav-routerlink {
@@ -108,6 +115,7 @@ export default {
     background: rgb(101, 111, 252);
     padding: 3px 12px;
     color: azure;
+    white-space: nowrap;
     border-radius: 4px;
   }
 }
@@ -117,6 +125,7 @@ export default {
     background: rgb(101, 111, 252);
     color: azure;
     padding: 5px 20px;
+    white-space: nowrap;
     border-radius: 4px;
   }
 }
