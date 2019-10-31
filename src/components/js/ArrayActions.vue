@@ -66,14 +66,14 @@ export default {
 </script>
 
 <style scoped>
-.arrayactions-container {
-  width: 100%;
-}
-.arrayactions-item {
-  margin: 15px 0;
-  background-color: rgb(245, 235, 235);
-  padding: 5px;
-  font-size: 20px;
-  color: #444;
-}
+  .arrayactions-container {
+    width: 100%;
+  }
+  .arrayactions-item {
+    margin: 15px 0;
+    background-color: rgb(245, 235, 235);
+    padding: 5px;
+    font-size: 20px;
+    color: #444;
+  }
 </style>
