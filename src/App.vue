@@ -40,8 +40,6 @@
   }
   .mdBox pre{
     margin: 5px;
-  }
-  .language-js{
     color: rgb(198, 218, 151);
   }
 </style>

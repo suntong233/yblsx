@@ -19,6 +19,7 @@ import ArrayActions from "../components/js/ArrayActions"; // 引入es6
 import FacetoO from "../components/js/FaceToO"; // 引入面向对象
 import SleepTimes from "../components/js/sleep"; // 引入修眠
 import BOM from "../components/js/Bom";  // 引入BOM
+import FunCurrying from "../components/js/FunCurrying";  // 引入函数柯里化
 import { _saveLocal } from "../utils/public.js"; // 引入本地存储工具
 const components = {
     HeaderNav,
@@ -30,7 +31,8 @@ const components = {
     EsAsync,
     SleepTimes,
     ArrayActions,
-    BOM
+    BOM,
+    FunCurrying
 }
 export default {
     name: "Js",
@@ -61,6 +63,9 @@ export default {
                 },
                 {   // BOM
                     name: "BOM"
+                },
+                {   // 柯里化
+                    name: "FunCurrying"
                 }
             ],
         }
