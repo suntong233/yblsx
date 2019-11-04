@@ -100,26 +100,34 @@ export default {
     handleSearch() {
       let type = this.select;
       let val = this.inputval.trim();
-      switch (type) {
-        case "name":
-          this.searchApi("Name",val);
-          break;
-        case "date":
-          this.searchApi("Date",val);
-          break;
-        case "address":
-          this.searchApi("Address",val);
-          break;
-        default:
-          break;
+      if (val === "") {
+        console.log("未输入");
+      } else {
+        switch (type) {
+          case "name":
+            this.searchApi("Name", val);
+            break;
+          case "date":
+            this.searchApi("Date", val);
+            break;
+          case "address":
+            this.searchApi("Address", val);
+            break;
+          default:
+            break;
+        }
       }
     },
-    searchApi(type,val) {
+    searchApi(type, val) {
       this.axios
         .get(`http://localhost:5500/api/searchBy${type}/${val}`)
         .then(res => {
-            this.showSearch = res.data
-          this.inputval = "";
+            if(res.data.unfind){
+                console.log('没有数据')
+            }else{
+                this.showSearch = res.data;
+            }
+            this.inputval = "";
         });
     },
     handleCancel() {
