@@ -12,13 +12,15 @@
 import HeaderNav from "../components/public/HeaderNav"; // 引入顶部组件
 import Catalog from "../components/public/Catalog"; // 引入目录组件
 import LessEasy from "../components/css/LessEasy";  // 引入lesseasy
+import ScssEasy from "../components/css/ScssEasy";  // 引入scss
 import Grid from "../components/css/Grid";  // 引入Grid
 import { _saveLocal } from "../utils/public.js"; // 引入本地存储工具
 const components = {
     HeaderNav,
     LessEasy,
     Catalog,
-    Grid
+    Grid,
+    ScssEasy
 }
 export default {
     name: "Css",
@@ -31,6 +33,9 @@ export default {
                 },
                 {
                     name: "Grid"
+                },
+                {
+                    name: "ScssEasy"
                 }
             ],      
         }
