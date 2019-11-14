@@ -185,9 +185,53 @@
       </pre>
       <h2>scss函数</h2>
       <pre>
-         unquote($string)：删除字符串中的引号。
+        unquote($string)：删除字符串中的引号。
 
-         quote($string)：给字符串添加引号。
+        quote($string)：给字符串添加引号。
+
+        To-upper-case() 函数将字符串小写字母转换成大写字母
+
+        To-lower-case() 将字符串转换成小写字母：
+
+        percentage($value)：将一个不带单位的数转换成百分比值；
+
+        round($value)：将数值四舍五入，转换成一个最接近的整数；
+
+        ceil($value)：将大于自己的小数转换成下一位整数；
+
+        floor($value)：将一个数去除他的小数部分；
+
+        abs($value)：返回一个数的绝对值；
+
+        min($numbers…)：找出几个数值之间的最小值；
+
+        max($numbers…)：找出几个数值之间的最大值；
+
+        random(): 获取随机数
+      </pre>
+      <h2>列表函数</h2>
+      <pre>
+        length($list)：返回一个列表的长度值；
+
+        nth($list, $n)：返回一个列表中指定的某个标签值
+
+        join($list1, $list2, [$separator])：将两个列给连接在一起，变成一个列表；
+
+        append($list1, $val, [$separator])：将某个值放在列表的最后；
+
+        zip($lists…)：将几个列表结合成一个多维的列表；
+        
+        index($list, $value)：返回一个值在列表中的位置值。
+      </pre>
+      <h2>Introspection函数</h2>
+      <pre>
+        ype-of($value)：返回一个值的类型\
+
+        unit($number)：返回一个值的单位\
+
+        unitless($number)：判断一个值是否带有单位\
+
+        comparable($number-1, $number-2)：判断两个值是否可以做加、减和合并\
       </pre>
   </div>
 </template>
