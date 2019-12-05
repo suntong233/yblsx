@@ -101,7 +101,7 @@ export default {
       let type = this.select;
       let val = this.inputval.trim();
       if (val === "") {
-        console.log("未输入");
+        window.console.log("未输入");
       } else {
         switch (type) {
           case "name":
@@ -123,7 +123,7 @@ export default {
         .get(`http://localhost:5500/api/searchBy${type}/${val}`)
         .then(res => {
             if(res.data.unfind){
-                console.log('没有数据')
+                 window.console.log('没有数据')
             }else{
                 this.showSearch = res.data;
             }
@@ -151,7 +151,7 @@ export default {
         this.addressval.trim() === "" ||
         !this.dateVal
       ) {
-        console.log("输入信息不完整");
+         window.console.log("输入信息不完整");
         this.showdialog = false;
       } else {
         let tempdate =
